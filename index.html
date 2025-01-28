@@ -3,13 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"> 
-    <title>Portefolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <title>Mon Portfolio</title>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mon Portfolio</a>
+        </div>
+    </nav>
 
-    
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row">
+            <!-- Profile Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="votre-photo.jpg" class="card-img-top" alt="Ma photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Votre Nom</h5>
+                        <p class="card-text">Bref résumé professionnel...</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#motivationModal">
+                            Voir lettre de motivation
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Tabs -->
+            <div class="col-md-8">
+                <ul class="nav nav-tabs" id="cvTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#experiences">Expériences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#education">Éducation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#competences">Compétences</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="experiences">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <h5>Poste</h5>
+                                <p>Entreprise - Période</p>
+                            </a>
+                            <!-- Add more experiences -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="education">
+                        <div class="list-group">
+                            <!-- Education items -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="competences">
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Description détaillée">Compétence 1</span>
+                            <!-- Add more skills -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Carousel -->
+        <div class="mt-5">
+            <h3>Mes Projets</h3>
+            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="projet1.jpg" class="d-block w-100" alt="Projet 1">
+                    </div>
+                    <!-- Add more carousel items -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Motivation Letter Modal -->
+    <div class="modal fade" id="motivationModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Lettre de Motivation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your motivation letter content -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 </html>
